@@ -1,7 +1,7 @@
 # Contributing
-[issues]: https://github.com/technote-space/gh-action-template/issues
-[fork]: https://github.com/technote-space/gh-action-template/fork
-[pr]: https://github.com/technote-space/gh-action-template/compare
+[issues]: https://github.com/technote-space/gh-actions-template/issues
+[fork]: https://github.com/technote-space/gh-actions-template/fork
+[pr]: https://github.com/technote-space/gh-actions-template/compare
 [jest]: https://jestjs.io/
 [code-of-conduct]: CODE_OF_CONDUCT.md
 
