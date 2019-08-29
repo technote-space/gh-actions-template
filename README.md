@@ -1,9 +1,9 @@
 # GitHub Actions Template
 
-[![Build Status](https://github.com/technote-space/gh-action-template/workflows/Build/badge.svg)](https://github.com/technote-space/gh-action-template/actions)
-[![Coverage Status](https://coveralls.io/repos/github/technote-space/gh-action-template/badge.svg?branch=master)](https://coveralls.io/github/technote-space/gh-action-template?branch=master)
-[![CodeFactor](https://www.codefactor.io/repository/github/technote-space/gh-action-template/badge)](https://www.codefactor.io/repository/github/technote-space/gh-action-template)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/gh-action-template/blob/master/LICENSE)
+[![Build Status](https://github.com/technote-space/gh-actions-template/workflows/Build/badge.svg)](https://github.com/technote-space/gh-actions-template/actions)
+[![Coverage Status](https://coveralls.io/repos/github/technote-space/gh-actions-template/badge.svg?branch=master)](https://coveralls.io/github/technote-space/gh-actions-template?branch=master)
+[![CodeFactor](https://www.codefactor.io/repository/github/technote-space/gh-actions-template/badge)](https://www.codefactor.io/repository/github/technote-space/gh-actions-template)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/gh-actions-template/blob/master/LICENSE)
 
 Template for GitHub actions.
 
