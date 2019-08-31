@@ -7,8 +7,16 @@
 
 Template for GitHub actions.
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Installation](#installation)
+- [Action event details](#action-event-details)
+  - [Target event](#target-event)
+- [Author](#author)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation
 1. Setup workflow  
