@@ -1,15 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
-
-- [GitHub Actions Template](#github-actions-template)
-  - [Installation](#installation)
-  - [Action event details](#action-event-details)
-    - [Target event](#target-event)
-  - [Author](#author)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # GitHub Actions Template
 
 [![Build Status](https://github.com/technote-space/gh-actions-template/workflows/Build/badge.svg)](https://github.com/technote-space/gh-actions-template/actions)
@@ -18,6 +6,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/gh-actions-template/blob/master/LICENSE)
 
 Template for GitHub actions.
+
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 ## Installation
 1. Setup workflow  
