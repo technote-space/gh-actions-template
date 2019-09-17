@@ -1,25 +1,26 @@
+import { Context } from '@actions/github/lib/context';
 // const fs = require('fs');
 // const path = require('path');
 
-export const getContext = (override: object) => Object.assign({
-    payload: {
-        action: '',
-    },
-    eventName: '',
-    sha: '',
-    ref: '',
-    workflow: '',
-    action: '',
-    actor: '',
-    issue: {
-        owner: '',
-        repo: '',
-        number: 1,
-    },
-    repo: {
-        owner: '',
-        repo: '',
-    },
+export const getContext = (override: object): Context => Object.assign({
+	payload: {
+		action: '',
+	},
+	eventName: '',
+	sha: '',
+	ref: '',
+	workflow: '',
+	action: '',
+	actor: '',
+	issue: {
+		owner: '',
+		repo: '',
+		number: 1,
+	},
+	repo: {
+		owner: '',
+		repo: '',
+	},
 }, override);
 
 // export const getConfigFixture = (fileName: string = 'config.yml') => ({
