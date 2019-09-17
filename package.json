@@ -39,7 +39,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest",
+    "test": "yarn lint && yarn cover",
+    "lint": "eslint src/**/**/*.ts && eslint __tests__/**/**/*.ts",
     "cover": "jest --coverage"
   }
 }
