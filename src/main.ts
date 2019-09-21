@@ -1,28 +1,29 @@
 import path from 'path';
 import { setFailed, getInput } from '@actions/core';
 import { context, GitHub } from '@actions/github';
-import signale from 'signale';
-import { getBuildVersion, isTargetEvent } from './utils/misc';
+import { isTargetEvent } from '@technote-space/filter-github-action';
+import { Logger, Utils } from '@technote-space/github-action-helper';
+import { getPayload } from './utils/misc';
+import { TARGET_EVENTS } from './constant';
+
+const {showActionInfo} = Utils;
 
 /**
  * run
  */
 async function run(): Promise<void> {
 	try {
-		const version = getBuildVersion(path.resolve(__dirname, '..', 'build.json'));
-		if ('string' === typeof version) {
-			signale.info('Version: %s', version);
-		}
-		signale.info('Event: %s', context.eventName);
-		signale.info('Action: %s', context.payload.action);
-		if (!isTargetEvent(context)) {
-			signale.info('This is not target event.');
+		const logger = new Logger();
+		showActionInfo(path.resolve(__dirname, '..'), logger, context);
+
+		if (!isTargetEvent(TARGET_EVENTS, context)) {
+			logger.info('This is not target event.');
 			return;
 		}
 
 		const octokit = new GitHub(getInput('GITHUB_TOKEN', {required: true}));
 		console.log(octokit);
-		signale.info('Implement');
+		console.log(getPayload(context));
 
 	} catch (error) {
 		setFailed(error.message);

@@ -1,13 +1,13 @@
-import path from 'path';
-import { getContext } from '../util';
-import {
-	isTargetEvent,
-	getBuildVersion,
-} from '../../src/utils/misc';
+import { isTargetEvent } from '@technote-space/filter-github-action';
+import { Test } from '@technote-space/github-action-helper';
+import { getPayload } from '../../src/utils/misc';
+import { TARGET_EVENTS } from '../../src/constant';
+
+const {getContext} = Test;
 
 describe('isTargetEvent', () => {
 	it('should return true', () => {
-		expect(isTargetEvent(getContext({
+		expect(isTargetEvent(TARGET_EVENTS, getContext({
 			payload: {
 				action: 'opened',
 			},
@@ -16,7 +16,7 @@ describe('isTargetEvent', () => {
 	});
 
 	it('should return false 1', () => {
-		expect(isTargetEvent(getContext({
+		expect(isTargetEvent(TARGET_EVENTS, getContext({
 			payload: {
 				action: 'opened',
 			},
@@ -25,7 +25,7 @@ describe('isTargetEvent', () => {
 	});
 
 	it('should return false 2', () => {
-		expect(isTargetEvent(getContext({
+		expect(isTargetEvent(TARGET_EVENTS, getContext({
 			payload: {
 				action: 'closed',
 			},
@@ -34,16 +34,14 @@ describe('isTargetEvent', () => {
 	});
 });
 
-describe('getBuildVersion', () => {
-	it('should get build version', () => {
-		expect(getBuildVersion(path.resolve(__dirname, '..', 'fixtures', 'build1.json'))).toBe('v1.2.3');
-	});
-
-	it('should return false 1', () => {
-		expect(getBuildVersion(path.resolve(__dirname, '..', 'fixtures', 'build2.json'))).toBeFalsy();
-	});
-
-	it('should return false 2', () => {
-		expect(getBuildVersion(path.resolve(__dirname, '..', 'fixtures', 'build.test.json'))).toBeFalsy();
+describe('getPayload', () => {
+	it('should get payload', () => {
+		expect(getPayload(getContext({
+			payload: {
+				'test': 123,
+			},
+		}))).toEqual({
+			'test': 123,
+		});
 	});
 });
