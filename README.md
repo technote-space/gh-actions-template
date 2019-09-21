@@ -18,27 +18,11 @@ Template for GitHub actions.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Installation
-1. Setup workflow  
-   e.g. `.github/workflows/pull_request.yml`
-   ```yaml
-   on: pull_request
-   name: Pull Request
-   jobs:
-     assignAuthor:
-       name: GitHub Actions Template
-       runs-on: ubuntu-latest
-       steps:
-         - name: GitHub Actions Template
-           if: github.event.action == 'opened'
-           uses: technote-space/gh-actions-template@v1
-           with:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   ```
-
-## Action event details
-### Target event
-- pull_request: opened
+## Setup
+### yarn
+- `yarn setup`
+### npm
+- `npm run setup`
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
