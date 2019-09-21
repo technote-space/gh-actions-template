@@ -51,11 +51,3 @@ Please edit package.json
   - repository
   - bugs
 EOS
-
-current=$(
-  # shellcheck disable=SC2046
-  cd $(dirname "${0}")
-  pwd
-)
-
-rm -rdf "${current}"
