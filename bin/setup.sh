@@ -24,11 +24,18 @@ rm -f .github/CODE_OF_CONDUCT.md
 rm -f .github/CODEOWNERS
 rm -f .github/CONTRIBUTING.md
 rm -f .github/FUNDING.yml
-rm -f .github/pull_request_template.yml
+rm -f .github/pull_request_template.md
 
-rm _config.yml
-rm README.md
+rm -f _config.yml
+rm -f README.md
 touch README.md
+
+sed -i '/COMMIT_NAME/d' .github/workflows/released.yml
+sed -i '/COMMIT_EMAIL/d' .github/workflows/released.yml
+sed -i '/OUTPUT_BUILD_INFO_FILENAME/d' .github/workflows/released.yml
+sed -i '/TEST_TAG_PREFIX/d' .github/workflows/released.yml
+sed -i '/ORIGINAL_TAG_PREFIX/d' .github/workflows/released.yml
+sed -i '/\*\/\*/d' .github/workflows/released.yml
 
 sed -i '/setup.sh/d' package.json
 
