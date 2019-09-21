@@ -11,9 +11,9 @@ Template for GitHub actions.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [Installation](#installation)
-- [Action event details](#action-event-details)
-  - [Target event](#target-event)
+- [Setup](#setup)
+  - [yarn](#yarn)
+  - [npm](#npm)
 - [Author](#author)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
