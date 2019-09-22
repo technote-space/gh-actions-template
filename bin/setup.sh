@@ -36,6 +36,7 @@ sed -i '/OUTPUT_BUILD_INFO_FILENAME/d' .github/workflows/released.yml
 sed -i '/TEST_TAG_PREFIX/d' .github/workflows/released.yml
 sed -i '/ORIGINAL_TAG_PREFIX/d' .github/workflows/released.yml
 sed -i '/\*\/\*/d' .github/workflows/released.yml
+sed -i 's/test\/v1/v1/' .github/workflows/released.yml
 
 sed -i '/setup.sh/d' package.json
 
