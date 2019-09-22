@@ -1,9 +1,7 @@
 import { isTargetEvent } from '@technote-space/filter-github-action';
-import { Test } from '@technote-space/github-action-helper';
+import { getContext } from '@technote-space/github-action-test-helper';
 import { getPayload } from '../../src/utils/misc';
 import { TARGET_EVENTS } from '../../src/constant';
-
-const {getContext} = Test;
 
 describe('isTargetEvent', () => {
 	it('should return true', () => {
