@@ -47,11 +47,11 @@ jobs:
         run: yarn install
       - name: Run tests
         run: yarn cover
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
+      - name: Codecov
+        uses: codecov/codecov-action@v1.0.2
         with:
-          github-token: ${{ secrets.github_token }}
-          parallel: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/lcov.info
       - uses: 8398a7/action-slack@v1
         with:
           type: failure
@@ -60,20 +60,9 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: failure()
 
-  coverallsFinished:
-    name: Coveralls Finished
-    needs: jest
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel-finished: true
-
   slack:
     name: Slack
-    needs: coverallsFinished
+    needs: jest
     runs-on: ubuntu-latest
     steps:
       - uses: 8398a7/action-slack@v1
