@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gh-actions-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Template for GitHub actions.",
   "author": "Technote <technote.space@gmail.com> (https://technote.space)",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "dependencies": {
     "@actions/core": "^1.1.1",
     "@actions/github": "^1.1.0",
-    "@technote-space/filter-github-action": "^0.0.2",
+    "@technote-space/filter-github-action": "^0.1.1",
     "@technote-space/github-action-helper": "^0.1.5"
   },
   "devDependencies": {
@@ -44,6 +44,7 @@
     "build": "tsc",
     "test": "yarn lint && yarn cover",
     "lint": "eslint src/**/**/*.ts && eslint __tests__/**/**/*.ts",
-    "cover": "jest --coverage"
+    "cover": "jest --coverage",
+    "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
   }
 }
