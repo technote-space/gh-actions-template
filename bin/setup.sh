@@ -2,6 +2,7 @@
 
 set -e
 
+rm -f .github/workflows/check_version.yml
 rm -f .github/workflows/ci.yml
 rm -f .github/workflows/gh_releases.yml
 rm -f .github/workflows/issue_opened.yml
