@@ -20,13 +20,13 @@
   "dependencies": {
     "@actions/core": "^1.2.0",
     "@actions/github": "^1.1.0",
-    "@technote-space/filter-github-action": "^0.1.7",
-    "@technote-space/github-action-helper": "^0.2.11"
+    "@technote-space/filter-github-action": "^0.1.10",
+    "@technote-space/github-action-helper": "^0.6.0"
   },
   "devDependencies": {
-    "@technote-space/github-action-test-helper": "^0.0.21",
+    "@technote-space/github-action-test-helper": "^0.0.22",
     "@types/jest": "^24.0.23",
-    "@types/node": "^12.12.11",
+    "@types/node": "^12.12.12",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "eslint": "^6.7.0",
