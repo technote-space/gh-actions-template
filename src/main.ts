@@ -12,22 +12,17 @@ const {showActionInfo} = ContextHelper;
  * run
  */
 async function run(): Promise<void> {
-	try {
-		const logger = new Logger();
-		showActionInfo(path.resolve(__dirname, '..'), logger, context);
+	const logger = new Logger();
+	showActionInfo(path.resolve(__dirname, '..'), logger, context);
 
-		if (!isTargetEvent(TARGET_EVENTS, context)) {
-			logger.info('This is not target event.');
-			return;
-		}
-
-		const octokit = new GitHub(getInput('GITHUB_TOKEN', {required: true}));
-		console.log(octokit);
-		console.log(getPayload(context));
-
-	} catch (error) {
-		setFailed(error.message);
+	if (!isTargetEvent(TARGET_EVENTS, context)) {
+		logger.info('This is not target event.');
+		return;
 	}
+
+	const octokit = new GitHub(getInput('GITHUB_TOKEN', {required: true}));
+	console.log(octokit);
+	console.log(getPayload(context));
 }
 
-run();
+run().catch(error => setFailed(error.message));
