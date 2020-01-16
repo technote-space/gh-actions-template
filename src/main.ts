@@ -6,14 +6,12 @@ import { Logger, ContextHelper } from '@technote-space/github-action-helper';
 import { getPayload } from './utils/misc';
 import { TARGET_EVENTS } from './constant';
 
-const {showActionInfo} = ContextHelper;
-
 /**
  * run
  */
 async function run(): Promise<void> {
 	const logger = new Logger();
-	showActionInfo(path.resolve(__dirname, '..'), logger, context);
+	ContextHelper.showActionInfo(path.resolve(__dirname, '..'), logger, context);
 
 	if (!isTargetEvent(TARGET_EVENTS, context)) {
 		logger.info('This is not target event.');
