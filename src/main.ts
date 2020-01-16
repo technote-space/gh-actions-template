@@ -2,11 +2,11 @@ import path from 'path';
 import { setFailed, getInput } from '@actions/core';
 import { context, GitHub } from '@actions/github';
 import { isTargetEvent } from '@technote-space/filter-github-action';
-import { Logger, Utils } from '@technote-space/github-action-helper';
+import { Logger, ContextHelper } from '@technote-space/github-action-helper';
 import { getPayload } from './utils/misc';
 import { TARGET_EVENTS } from './constant';
 
-const {showActionInfo} = Utils;
+const {showActionInfo} = ContextHelper;
 
 /**
  * run
