@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: 0 3 * * 6
+    - cron: 0 9 * * 0
   pull_request:
     types: [opened, synchronize, reopened, closed]
   repository_dispatch:
