@@ -1,6 +1,6 @@
 on:
   pull_request:
-    types: [opened, review_requested]
+    types: [opened]
 name: Pull Request opened
 jobs:
   assignToProject:
