@@ -1,8 +1,8 @@
 import path from 'path';
-import { setFailed, getInput } from '@actions/core';
-import { context, GitHub } from '@actions/github';
+import { setFailed } from '@actions/core';
+import { Context } from '@actions/github/lib/context';
+import { Logger, ContextHelper, Utils } from '@technote-space/github-action-helper';
 import { isTargetEvent } from '@technote-space/filter-github-action';
-import { Logger, ContextHelper } from '@technote-space/github-action-helper';
 import { getPayload } from './utils/misc';
 import { TARGET_EVENTS } from './constant';
 
@@ -10,7 +10,8 @@ import { TARGET_EVENTS } from './constant';
  * run
  */
 async function run(): Promise<void> {
-	const logger = new Logger();
+	const logger  = new Logger();
+	const context = new Context();
 	ContextHelper.showActionInfo(path.resolve(__dirname, '..'), logger, context);
 
 	if (!isTargetEvent(TARGET_EVENTS, context)) {
@@ -18,7 +19,7 @@ async function run(): Promise<void> {
 		return;
 	}
 
-	const octokit = new GitHub(getInput('GITHUB_TOKEN', {required: true}));
+	const octokit = Utils.getOctokit();
 	console.log(octokit);
 	console.log(getPayload(context));
 }
