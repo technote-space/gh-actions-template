@@ -3,13 +3,10 @@ import { setFailed } from '@actions/core';
 import { Context } from '@actions/github/lib/context';
 import { Logger, ContextHelper, Utils } from '@technote-space/github-action-helper';
 import { isTargetEvent } from '@technote-space/filter-github-action';
-import { getPayload } from './utils/misc';
 import { TARGET_EVENTS } from './constant';
+import { execute } from './process';
 
-/**
- * run
- */
-async function run(): Promise<void> {
+const run = async(): Promise<void> => {
 	const logger  = new Logger();
 	const context = new Context();
 	ContextHelper.showActionInfo(path.resolve(__dirname, '..'), logger, context);
@@ -19,9 +16,10 @@ async function run(): Promise<void> {
 		return;
 	}
 
-	const octokit = Utils.getOctokit();
-	console.log(octokit);
-	console.log(getPayload(context));
-}
+	await execute(logger, Utils.getOctokit(), context);
+};
 
-run().catch(error => setFailed(error.message));
+run().catch(error => {
+	console.log(error);
+	setFailed(error.message);
+});
