@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gh-actions-template",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Template for GitHub actions.",
   "author": {
     "name": "Technote",
@@ -47,7 +47,7 @@
     "access": "public"
   },
   "scripts": {
-    "setup": "bash bin/setup.sh && rm -rdf bin",
+    "setup": "bash bin/setup.sh && if [[ -f __DELETE__ ]]; then rm -rdf bin; rm -f __DELETE__; fi",
     "build": "tsc",
     "test": "yarn lint && yarn cover",
     "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts' --cache",
