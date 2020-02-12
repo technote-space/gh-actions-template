@@ -2,49 +2,45 @@
 
 set -e
 
-rm -f .github/workflows/check_version.yml
-rm -f .github/workflows/ci.yml
-rm -f .github/workflows/gh_releases.yml
-rm -f .github/workflows/issue_opened.yml
-rm -f .github/workflows/pr_opened.yml
-rm -f .github/workflows/pr_updated.yml
-rm -f .github/workflows/project_card_moved.yml
-#rm -f .github/workflows/release.yml
-rm -f .github/workflows/sync-workflows.yml
-rm -f .github/workflows/toc.yml
-rm -f .github/workflows/update-dependencies.yml
+echo "Owner: [= technote-space]"
+read -r OWNER
+if [[ -z "${OWNER}" ]]; then
+	OWNER=technote-space
+fi
 
-rm -f .github/card-labeler.yml
-rm -f .github/config.yml
-rm -f .github/labeler.yml
-rm -f .github/no-response.yml
-rm -f .github/pr-labeler.yml
-rm -f .github/release-drafter.yml
-rm -f .github/stale.yml
+echo "Repo: "
+read -r REPO
+if [[ -z "${REPO}" ]]; then
+	exit
+fi
 
-rm -rdf .github/ISSUE_TEMPLATE
+echo "Repository: ${OWNER}/${REPO}"
+# shellcheck disable=SC2162
+read -n1 -p "ok? (y/N): " yn
+if [[ $yn != [yY] ]]; then
+	exit
+fi
 
-rm -f .github/CODE_OF_CONDUCT.md
-rm -f .github/CODEOWNERS
-rm -f .github/CONTRIBUTING.md
-rm -f .github/FUNDING.yml
-rm -f .github/pull_request_template.md
+sed -i "s/technote-space/${OWNER}/g" .github/CODEOWNERS
+sed -i "s/technote-space/${OWNER}/g" README.md
+sed -i "s/gh-actions-template/${REPO}/g" README.md
+sed -i "s/technote-space\/gh-actions-template/${OWNER}\/${REPO}/g" package.json
 
-rm -f _config.yml
-rm -f README.md
-touch README.md
+if [[ "${OWNER}" != 'technote-space' ]]; then
+	rm -f .github/FUNDING.yml
+	rm -f _config.yml
+	sed -i '25,100d' README.md
+fi
 
 sed -i '/setup.sh/d' package.json
+touch __DELETE__
 
 cat << EOS
 Please edit package.json
-  - name
   - version
   - description
   - authoer
   - license
   - keywords
   - homepage
-  - repository
-  - bugs
 EOS
