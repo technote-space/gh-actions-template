@@ -5,13 +5,13 @@ set -e
 echo "Owner: [= technote-space]"
 read -r OWNER
 if [[ -z "${OWNER}" ]]; then
-	OWNER=technote-space
+  OWNER=technote-space
 fi
 
 echo "Repo: "
 read -r REPO
 if [[ -z "${REPO}" ]]; then
-	exit
+  exit
 fi
 
 echo "Title: [= ]"
@@ -29,7 +29,7 @@ echo "=================================="
 # shellcheck disable=SC2162
 read -n1 -p "ok? (y/N): " yn
 if [[ $yn != [yY] ]]; then
-	exit
+  exit
 fi
 
 sed -i "s/technote-space/${OWNER}/g" .github/CODEOWNERS
@@ -43,15 +43,15 @@ sed -i "s/GitHub Actions Template/${TITLE}/g" README.md
 sed -i "s/GitHub Actions Template/${TITLE}/g" action.yml
 
 if [[ "${OWNER}" != 'technote-space' ]]; then
-	rm -f .github/FUNDING.yml
-	rm -f _config.yml
-	sed -i '25,100d' README.md
+  rm -f .github/FUNDING.yml
+  rm -f _config.yml
+  sed -i '25,100d' README.md
 fi
 
 sed -i '/setup.sh/d' package.json
 touch __DELETE__
 
-cat << EOS
+cat <<EOS
 
 
 Please edit package.json
