@@ -44,8 +44,11 @@ jobs:
         run: yarn install
         if: env.RUNNING
       - name: Check code style
-        run: yarn eslint ${{ env.GIT_DIFF }}
-        if: env.RUNNING
+        run: yarn eslint ${{ env.GIT_DIFF_FILTERED }}
+        if: env.RUNNING && env.GIT_DIFF_FILTERED
+      - name: Check code style
+        run: yarn lint
+        if: env.RUNNING && !env.GIT_DIFF_FILTERED
       - uses: 8398a7/action-slack@v2
         with:
           status: failure
