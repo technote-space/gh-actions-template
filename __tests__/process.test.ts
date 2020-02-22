@@ -5,11 +5,11 @@ import { execute } from '../src/process';
 
 const rootDir = resolve(__dirname, '..');
 
-describe('getPayload', () => {
+describe('execute', () => {
 	testEnv(rootDir);
 	testChildProcess();
 
-	it('should get payload', async() => {
+	it('should execute', async() => {
 		const mockExec   = spyOnExec();
 		const mockStdout = spyOnStdout();
 
