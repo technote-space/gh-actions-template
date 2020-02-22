@@ -8,14 +8,21 @@ if [[ -z "${OWNER}" ]]; then
   OWNER=technote-space
 fi
 
-echo "Repo: "
+readonly DIR=$(cd "$(dirname "$0")/.."; pwd)
+readonly DEFAULT_REPO=${DIR##*/}
+readonly DEFAULT_TITLE=$(echo "${DEFAULT_REPO}" | sed 's/[-_]/ /g' | tr "[:upper:]" "[:lower:]" | sed 's/\b\(.\)/\u\1/g')
+
+echo "Repo: [= ${DEFAULT_REPO}]"
 read -r REPO
 if [[ -z "${REPO}" ]]; then
-  exit
+  REPO=${DEFAULT_REPO}
 fi
 
-echo "Title: [= ]"
+echo "Title: [= ${DEFAULT_TITLE}]"
 read -r TITLE
+if [[ -z "${TITLE}" ]]; then
+  TITLE=${DEFAULT_TITLE}
+fi
 
 echo "DESCRIOTION: [= ]"
 read -r DESCRIOTION
