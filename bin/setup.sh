@@ -3,7 +3,7 @@
 set -e
 
 if [[ $(uname -s) == 'Darwin' ]]; then
-  if [[ $(sed --version | grep -c "gsed") == 1 ]]; then
+  if [[ $(sed --version | grep -c "gsed") == 0 ]]; then
     echo "Please setup to use gsed instead of sed"
     echo ">> brew install gnu-sed"
     echo ">> alias sed='gsed'"
