@@ -2,6 +2,15 @@
 
 set -e
 
+if [[ $(uname -s) == 'Darwin' ]]; then
+  if [[ $(sed --version 2> /dev/null || : | grep -c "gsed") == 0 ]]; then
+    echo "Please setup to use gsed instead of sed"
+    echo ">> brew install gnu-sed"
+    echo ">> alias sed='gsed'"
+    exit
+  fi
+fi
+
 echo "Owner: [= technote-space]"
 read -r OWNER
 if [[ -z "${OWNER}" ]]; then
