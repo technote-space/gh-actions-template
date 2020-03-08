@@ -120,6 +120,27 @@ Add tag for test release
 #### SLACK_WEBHOOK_URL
 https://api.slack.com/messaging/webhooks
 
+## Test release
+[![technote-space/release-github-actions-cli - GitHub](https://gh-card.dev/repos/technote-space/release-github-actions-cli.svg)](https://github.com/technote-space/release-github-actions-cli)
+
+1. Create `.env`  
+   Set [Personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+   ```dotenv
+   token=1234567890abcdef1234567890abcdef12345678
+   ```
+1. Run `yarn release`
+   - Dry run: `yarn release -n`
+   - Help: `yarn release -h`
+
+![cli](https://github.com/technote-space/gh-actions-template/raw/images/cli.gif)
+
+## Helpers
+[![technote-space/github-action-helper - GitHub](https://gh-card.dev/repos/technote-space/github-action-helper.svg)](https://github.com/technote-space/github-action-helper)
+
+[![technote-space/github-action-test-helper - GitHub](https://gh-card.dev/repos/technote-space/github-action-test-helper.svg)](https://github.com/technote-space/github-action-test-helper)
+
+[![technote-space/filter-github-action - GitHub](https://gh-card.dev/repos/technote-space/filter-github-action.svg)](https://github.com/technote-space/filter-github-action)
+
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
 [Blog](https://technote.space)
