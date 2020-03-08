@@ -60,6 +60,7 @@ sed -i "s/GitHub Actions Template/${TITLE}/g" action.yml
 
 if [[ "${OWNER}" != 'technote-space' ]]; then
   rm -f .github/FUNDING.yml
+  rm -f .github/workflows/sync-workflows.yml
   rm -f _config.yml
   sed -i '25,100d' README.md
 fi
