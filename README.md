@@ -41,8 +41,6 @@ Template for GitHub actions.
 ### npm
 - `npm run setup`
 
-![command](https://raw.githubusercontent.com/technote-space/gh-actions-template/images/command.png)
-
 ## Workflows
 
 Some `workflows` are included by default.  

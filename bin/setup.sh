@@ -74,8 +74,8 @@ cat <<EOS
 Please edit package.json
   - version
   - description
-  - authoer
+  - author
   - license
   - keywords
-  - homepage
+  - etc.
 EOS
