@@ -49,6 +49,9 @@ CI Workflow
 1. Notify by slack
    - if workflow is failure
 
+[ACCESS_TOKEN](#access_token) is required.
+[SLACK_WEBHOOK_URL](#slack_webhook_url) is required.
+
 ### add-version-tag.yml
 Add the release tag when pull request is merged.
 
@@ -111,7 +114,11 @@ Add tag for test release
 
 ### Secrets
 #### ACCESS_TOKEN
-SLACK_WEBHOOK_URL
+[Personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) with the public_repo or repo scope  
+(repo is required for private repositories)
+
+#### SLACK_WEBHOOK_URL
+https://api.slack.com/messaging/webhooks
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
