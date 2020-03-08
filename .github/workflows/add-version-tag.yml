@@ -35,3 +35,14 @@ jobs:
               sha: context.sha
             })
         if: env.NEXT_VERSION
+      - uses: actions/github-script@0.4.0
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            github.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/heads/release/next-${process.env.NEXT_VERSION}`,
+              sha: context.sha
+            })
+        if: env.NEXT_VERSION
