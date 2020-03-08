@@ -28,6 +28,8 @@ Template for GitHub actions.
   - [update-dependencies.yml](#update-dependenciesyml)
   - [add-test-tag.yml](#add-test-tagyml)
   - [Secrets](#secrets)
+- [Test release](#test-release)
+- [Helpers](#helpers)
 - [Author](#author)
 
 </details>
