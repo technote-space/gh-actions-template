@@ -1,5 +1,15 @@
 import { resolve } from 'path';
-import { testEnv, spyOnStdout, spyOnExec, testChildProcess, getOctokit, generateContext, execCalledWith, stdoutCalledWith } from '@technote-space/github-action-test-helper';
+import {
+	testEnv,
+	spyOnStdout,
+	spyOnExec,
+	testChildProcess,
+	getOctokit,
+	generateContext,
+	execCalledWith,
+	stdoutCalledWith,
+	getLogStdout,
+} from '@technote-space/github-action-test-helper';
 import { Logger } from '@technote-space/github-action-helper';
 import { execute } from '../src/process';
 
@@ -17,9 +27,20 @@ describe('execute', () => {
 
 		execCalledWith(mockExec, ['ls -lat']);
 		stdoutCalledWith(mockStdout, [
-			'{\n\t"action": ""\n}',
+			'::group::Dump context',
+			getLogStdout({action: ''}),
+			'::endgroup::',
+			'::group::Command test',
 			'[command]ls -lat',
 			'  >> stdout',
+			'::endgroup::',
+			'::group::Color text',
+			'> green text: \x1b[31;40;1mgreen\x1b[0m',
+			'::warning::warning!',
+			'::error::error!!!',
+			'::debug::debug...',
+			'log log log',
+			'::endgroup::',
 		]);
 	});
 });
