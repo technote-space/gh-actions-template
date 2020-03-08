@@ -17,6 +17,17 @@ Template for GitHub actions.
 - [Setup](#setup)
   - [yarn](#yarn)
   - [npm](#npm)
+- [Workflows](#workflows)
+  - [ci.yml](#ciyml)
+  - [add-version-tag.yml](#add-version-tagyml)
+  - [toc.yml](#tocyml)
+  - [issue-opened.yml](#issue-openedyml)
+  - [pr-opened.yml](#pr-openedyml)
+  - [pr-updated.yml](#pr-updatedyml)
+  - [project-card-moved.yml](#project-card-movedyml)
+  - [update-dependencies.yml](#update-dependenciesyml)
+  - [add-test-tag.yml](#add-test-tagyml)
+  - [Secrets](#secrets)
 - [Author](#author)
 
 </details>
