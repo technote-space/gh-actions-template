@@ -28,6 +28,8 @@ Template for GitHub actions.
 ### npm
 - `npm run setup`
 
+![command](https://raw.githubusercontent.com/technote-space/gh-actions-template/images/command.png)
+
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
 [Blog](https://technote.space)
