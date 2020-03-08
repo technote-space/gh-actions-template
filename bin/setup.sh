@@ -62,7 +62,7 @@ if [[ "${OWNER}" != 'technote-space' ]]; then
   rm -f .github/FUNDING.yml
   rm -f .github/workflows/sync-workflows.yml
   rm -f _config.yml
-  sed -i '25,100d' README.md
+  sed -i '/[tT]echnote/d' README.md
 fi
 
 sed -i '/setup.sh/d' package.json
