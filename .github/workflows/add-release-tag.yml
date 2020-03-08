@@ -4,11 +4,11 @@ on:
       - master
     types: [closed]
 
-name: Add version tag
+name: Add release tag
 
 jobs:
   tag:
-    name: Add version tag
+    name: Add release tag
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true && github.event.pull_request.head.user.id == github.event.pull_request.base.user.id && startsWith(github.head_ref, 'release/')
     steps:

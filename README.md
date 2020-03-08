@@ -30,6 +30,89 @@ Template for GitHub actions.
 
 ![command](https://raw.githubusercontent.com/technote-space/gh-actions-template/images/command.png)
 
+## Workflows
+
+Some `workflows` are included by default.  
+
+### ci.yml
+CI Workflow
+
+1. ESLint
+1. Jest
+   - Send coverage report to codecov if `CODECOV_TOKEN` is set.
+1. Release GitHub Actions
+   - if tag is added.
+1. Publish package
+   - if tag is added and `NPM_AUTH_TOKEN` is set.
+1. Publish release
+   - if 3 and 4 jobs are succeeded.
+1. Notify by slack
+   - if workflow is failure
+
+### add-version-tag.yml
+Add the release tag when pull request is merged.
+
+1. Get next version from commits histories.  
+   see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+1. Add tag.
+1. Create branch for next version.
+
+[ACCESS_TOKEN](#access_token) is required.
+
+### toc.yml
+Create TOC (Table of contents)
+
+[ACCESS_TOKEN](#access_token) is required.
+
+### issue-opened.yml
+- Assign the issue to project  
+   default setting:  
+   ```
+   Project: Backlog
+   Column: To do
+   ```
+- Assign author to issue
+
+### pr-opened.yml
+- Assign the PR to project  
+   default setting:  
+   ```
+   Project: Backlog
+   Column: In progress
+   ```
+   [ACCESS_TOKEN](#access_token) is required.
+- Assign author to PR
+- Add labels by branch  
+   [setting](.github/pr-labeler.yml)
+
+### pr-updated.yml
+- Add labels by changed files
+   [setting](.github/labeler.yml)
+- Create PR histories
+- Manage PR by release type  
+   [ACCESS_TOKEN](#access_token) is required.
+- Check version in package.json  
+   [ACCESS_TOKEN](#access_token) is required.
+- Check if it can be published to npm  
+   if `NPM_AUTH_TOKEN` is set
+
+### project-card-moved.yml
+Manage labels by moving project cards
+
+### update-dependencies.yml
+Update package dependencies
+
+- schedule
+- PR opened, closed
+- repository dispatch
+
+### add-test-tag.yml
+Add tag for test release
+
+### Secrets
+#### ACCESS_TOKEN
+SLACK_WEBHOOK_URL
+
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
 [Blog](https://technote.space)
