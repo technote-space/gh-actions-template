@@ -113,6 +113,9 @@ Create TOC (Table of contents)
 ### project-card-moved.yml
 Manage labels by moving project cards
 
+### broken-link-check.yml
+Check broken link in README
+
 ### update-dependencies.yml
 Update package dependencies
 
@@ -144,6 +147,19 @@ https://api.slack.com/messaging/webhooks
    - Help: `yarn release -h`
 
 ![cli](https://github.com/technote-space/gh-actions-template/raw/images/cli.gif)
+
+Then, you can use your `GitHub Actions` like follows:
+
+```yaml
+on: push
+name: Test
+jobs:
+  toc:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: owner/repo@gh-actions
+```
 
 ## Helpers
 [![technote-space/github-action-helper - GitHub](https://gh-card.dev/repos/technote-space/github-action-helper.svg)](https://github.com/technote-space/github-action-helper)
