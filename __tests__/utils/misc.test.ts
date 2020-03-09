@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import { isTargetEvent } from '@technote-space/filter-github-action';
 import { getContext, testEnv } from '@technote-space/github-action-test-helper';
 import { getPayload } from '../../src/utils/misc';
