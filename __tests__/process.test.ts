@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import { resolve } from 'path';
 import {
 	testEnv,
