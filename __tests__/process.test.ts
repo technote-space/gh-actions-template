@@ -1,5 +1,6 @@
 /* eslint-disable no-magic-numbers */
 import { resolve } from 'path';
+import nock from 'nock';
 import {
 	testEnv,
 	spyOnStdout,
@@ -10,21 +11,28 @@ import {
 	execCalledWith,
 	stdoutCalledWith,
 	getLogStdout,
+	disableNetConnect,
+	getApiFixture,
 } from '@technote-space/github-action-test-helper';
 import { Logger } from '@technote-space/github-action-helper';
 import { execute } from '../src/process';
 
-const rootDir = resolve(__dirname, '..');
+const rootDir     = resolve(__dirname, '..');
+const fixturesDir = resolve(__dirname, 'fixtures');
 
 describe('execute', () => {
+	disableNetConnect(nock);
 	testEnv(rootDir);
 	testChildProcess();
 
 	it('should execute', async() => {
 		const mockExec   = spyOnExec();
 		const mockStdout = spyOnStdout();
+		nock('https://api.github.com')
+			.get('/repos/hello/world/issues')
+			.reply(200, () => getApiFixture(fixturesDir, 'issues.get'));
 
-		await execute(new Logger(), getOctokit(), generateContext({}));
+		await execute(new Logger(), getOctokit(), generateContext({owner: 'hello', repo: 'world'}));
 
 		execCalledWith(mockExec, ['ls -lat']);
 		stdoutCalledWith(mockStdout, [
@@ -41,6 +49,12 @@ describe('execute', () => {
 			'::error::error!!!',
 			'::debug::debug...',
 			'log log log',
+			'::endgroup::',
+			'::group::Get issues',
+			getLogStdout([
+				'Test issue1',
+				'Test issue2',
+			]),
 			'::endgroup::',
 		]);
 	});
