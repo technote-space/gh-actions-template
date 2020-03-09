@@ -145,6 +145,19 @@ https://api.slack.com/messaging/webhooks
 
 ![cli](https://github.com/technote-space/gh-actions-template/raw/images/cli.gif)
 
+Then, you can use your `GitHub Actions` like follows:
+
+```yaml
+on: push
+name: Test
+jobs:
+  toc:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: owner/repo@gh-actions
+```
+
 ## Helpers
 [![technote-space/github-action-helper - GitHub](https://gh-card.dev/repos/technote-space/github-action-helper.svg)](https://github.com/technote-space/github-action-helper)
 
