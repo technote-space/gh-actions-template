@@ -25,6 +25,7 @@ Template for GitHub actions.
   - [pr-opened.yml](#pr-openedyml)
   - [pr-updated.yml](#pr-updatedyml)
   - [project-card-moved.yml](#project-card-movedyml)
+  - [broken-link-check.yml](#broken-link-checkyml)
   - [update-dependencies.yml](#update-dependenciesyml)
   - [add-test-tag.yml](#add-test-tagyml)
   - [Secrets](#secrets)
