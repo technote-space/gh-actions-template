@@ -629,10 +629,10 @@
     "@actions/github" "^2.1.1"
     js-yaml "^3.13.1"
 
-"@technote-space/release-github-actions-cli@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@technote-space/release-github-actions-cli/-/release-github-actions-cli-1.5.1.tgz#da6dba45201e2aa7273fffee340d30e9d906e292"
-  integrity sha512-j+yxXoasseBzN/CRIFrfHbc6yG3Ra7eMGnX5qWtY4n3g/KGxwtQ9P1ZtPbY32ZNPcas/rypZJadzWAUDtXasEQ==
+"@technote-space/release-github-actions-cli@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@technote-space/release-github-actions-cli/-/release-github-actions-cli-1.5.2.tgz#24c58111627adbba989ea67e349ec0717a40395f"
+  integrity sha512-HqAFj87AzJoNhxTMVs8k0+vcVIX1dfAq2mI7ulR6mKODSS34n308epyCGct4sD2y1c5wzZxJ16+dRIQfXYZsRA==
   dependencies:
     "@technote-space/release-github-actions" "^4.1.1"
     commander "^5.0.0"
