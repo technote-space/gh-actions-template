@@ -4,7 +4,7 @@ import nock from 'nock';
 import {
 	testEnv,
 	spyOnStdout,
-	spyOnExec,
+	spyOnSpawn,
 	testChildProcess,
 	getOctokit,
 	generateContext,
@@ -26,7 +26,7 @@ describe('execute', () => {
 	testChildProcess();
 
 	it('should execute', async() => {
-		const mockExec   = spyOnExec();
+		const mockExec   = spyOnSpawn();
 		const mockStdout = spyOnStdout();
 		nock('https://api.github.com')
 			.get('/repos/hello/world/issues')
