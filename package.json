@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gh-actions-template",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Template for GitHub actions.",
   "author": {
     "name": "Technote",
@@ -35,7 +35,7 @@
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@technote-space/github-action-test-helper": "^0.5.1",
-    "@technote-space/release-github-actions-cli": "^1.6.7",
+    "@technote-space/release-github-actions-cli": "^1.6.8",
     "@types/jest": "^26.0.3",
     "@types/node": "^14.0.14",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
