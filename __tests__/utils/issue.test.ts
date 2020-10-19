@@ -1,7 +1,13 @@
 /* eslint-disable no-magic-numbers */
 import {resolve} from 'path';
 import nock from 'nock';
-import {testEnv, getOctokit, disableNetConnect, generateContext, getApiFixture} from '@technote-space/github-action-test-helper';
+import {
+  testEnv,
+  getOctokit,
+  disableNetConnect,
+  generateContext,
+  getApiFixture
+} from '@technote-space/github-action-test-helper';
 import {getIssues} from '../../src/utils/issue';
 
 const rootDir     = resolve(__dirname, '../..');
