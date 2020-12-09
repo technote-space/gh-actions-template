@@ -1,4 +1,4 @@
-# https://help.github.com/ja/articles/metadata-syntax-for-github-actions
+# https://docs.github.com/en/free-pro-team@latest/actions/creating-actions/metadata-syntax-for-github-actions
 name: GitHub Actions Template
 
 description: Template for GitHub actions.
@@ -17,11 +17,14 @@ inputs:
 
 branding:
   # https://feathericons.com/
+  # e.g. https://haya14busa.github.io/github-action-brandings/
   icon: 'package'
   color: 'orange'
 
 runs:
   using: node12
   main: lib/main.js
+#  pre: lib/pre.js
+#  pre-if: 'runner.os == linux'
 #  post: lib/post.js
 #  post-if: 'success()'
