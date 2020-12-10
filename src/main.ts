@@ -7,7 +7,7 @@ import {isTargetEvent} from '@technote-space/filter-github-action';
 import {TARGET_EVENTS} from './constant';
 import {execute} from './process';
 
-const run = async(): Promise<void> => {
+(async(): Promise<void> => {
   const logger  = new Logger();
   const context = new Context();
   ContextHelper.showActionInfo(resolve(__dirname, '..'), logger, context);
@@ -18,9 +18,7 @@ const run = async(): Promise<void> => {
   }
 
   await execute(logger, Utils.getOctokit(), context);
-};
-
-run().catch(error => {
+})().catch(error => {
   console.log(error);
   setFailed(error.message);
 });
