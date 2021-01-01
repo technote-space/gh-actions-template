@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/gh-actions-template",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "description": "Template for GitHub actions.",
   "keywords": [
     "github",
