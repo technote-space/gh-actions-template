@@ -37,9 +37,9 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
-    "@octokit/openapi-types": "^3.1.1",
-    "@octokit/plugin-paginate-rest": "^2.8.0",
-    "@octokit/types": "^6.4.2",
+    "@octokit/openapi-types": "^3.3.0",
+    "@octokit/plugin-paginate-rest": "^2.9.0",
+    "@octokit/types": "^6.6.0",
     "@technote-space/filter-github-action": "^0.5.16",
     "@technote-space/github-action-helper": "^4.4.9",
     "@technote-space/github-action-log-helper": "^0.1.16"
@@ -51,8 +51,8 @@
     "@technote-space/release-github-actions-cli": "^1.7.4",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.22",
-    "@typescript-eslint/eslint-plugin": "^4.14.0",
-    "@typescript-eslint/parser": "^4.14.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
     "eslint": "^7.18.0",
     "husky": "^4.3.8",
     "jest": "^26.6.3",
