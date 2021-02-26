@@ -18,11 +18,12 @@
   "BRANCH_PREFIX": "release/",
   "ANNOTATION_EXCLUDE_PATTERNS": [
     ">> warning ",
+    ">> hint: ",
     "Cloning into",
     "has unmet peer dependency",
     "has incorrect peer dependency",
     "Using version",
-    "travis-ci",
+    "ci-helper",
     "tests/bootstrap.php"
   ]
 }
