@@ -37,9 +37,9 @@
   "dependencies": {
     "@actions/core": "^1.2.7",
     "@actions/github": "^4.0.0",
-    "@octokit/openapi-types": "^6.0.0",
+    "@octokit/openapi-types": "^6.1.0",
     "@octokit/plugin-paginate-rest": "^2.13.3",
-    "@octokit/types": "^6.13.0",
+    "@octokit/types": "^6.13.1",
     "@technote-space/filter-github-action": "^0.5.22",
     "@technote-space/github-action-helper": "^5.2.5",
     "@technote-space/github-action-log-helper": "^0.1.22"
