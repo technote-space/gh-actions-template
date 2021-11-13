@@ -1,8 +1,8 @@
-import {Context} from '@actions/github/lib/context';
-import {Octokit} from '@technote-space/github-action-helper/dist/types';
+import type {Context} from '@actions/github/lib/context';
+import type {Octokit} from '@technote-space/github-action-helper/dist/types';
 import {components} from '@octokit/openapi-types';
 
-type IssuesListForRepoResponseData = components['schemas']['issue-simple'];
+type IssuesListForRepoResponseData = components['schemas']['issue'];
 
 export const getIssues = async(octokit: Octokit, context: Context): Promise<Array<IssuesListForRepoResponseData>> => (await octokit.paginate(
   octokit.rest.issues.listForRepo, {
