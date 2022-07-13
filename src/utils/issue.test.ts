@@ -26,7 +26,7 @@ describe('getIssues', () => {
     const issues = await getIssues(getOctokit(), generateContext({ owner: 'hello', repo: 'world' }));
 
     expect(issues).toHaveLength(2);
-    expect(issues[0].id).toBe(1);
-    expect(issues[1].id).toBe(3);
+    expect(issues[0]!.id).toBe(1);
+    expect(issues[1]!.id).toBe(3);
   });
 });
