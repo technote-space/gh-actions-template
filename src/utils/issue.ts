@@ -1,6 +1,6 @@
-import type {Context} from '@actions/github/lib/context';
-import type {Octokit} from '@technote-space/github-action-helper/dist/types';
-import {components} from '@octokit/openapi-types';
+import type { Context } from '@actions/github/lib/context';
+import type { components } from '@octokit/openapi-types';
+import type { Octokit } from '@technote-space/github-action-helper/dist/types';
 
 type IssuesListForRepoResponseData = components['schemas']['issue'];
 

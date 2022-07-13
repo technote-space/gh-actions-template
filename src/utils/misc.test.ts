@@ -1,8 +1,9 @@
 /* eslint-disable no-magic-numbers */
-import {isTargetEvent} from '@technote-space/filter-github-action';
-import {getContext, testEnv} from '@technote-space/github-action-test-helper';
-import {getPayload} from '../../src/utils/misc';
-import {TARGET_EVENTS} from '../../src/constant';
+import { isTargetEvent } from '@technote-space/filter-github-action';
+import { getContext, testEnv } from '@technote-space/github-action-test-helper';
+import { describe, expect, it } from 'vitest';
+import { TARGET_EVENTS } from '../constant';
+import { getPayload } from './misc';
 
 describe('isTargetEvent', () => {
   testEnv();

@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
-import {resolve} from 'path';
-import nock from 'nock';
+import { resolve } from 'path';
+import { Logger } from '@technote-space/github-action-log-helper';
 import {
   testEnv,
   spyOnStdout,
@@ -14,8 +14,9 @@ import {
   disableNetConnect,
   getApiFixture,
 } from '@technote-space/github-action-test-helper';
-import {Logger} from '@technote-space/github-action-log-helper';
-import {execute} from '../src/process';
+import nock from 'nock';
+import { describe, it } from 'vitest';
+import { execute } from './process';
 
 const rootDir     = resolve(__dirname, '..');
 const fixturesDir = resolve(__dirname, 'fixtures');
@@ -32,12 +33,12 @@ describe('execute', () => {
       .get('/repos/hello/world/issues')
       .reply(200, () => getApiFixture(fixturesDir, 'issues.get'));
 
-    await execute(new Logger(), getOctokit(), generateContext({owner: 'hello', repo: 'world'}));
+    await execute(new Logger(), getOctokit(), generateContext({ owner: 'hello', repo: 'world' }));
 
     execCalledWith(mockExec, ['ls -lat']);
     stdoutCalledWith(mockStdout, [
       '::group::Dump context',
-      getLogStdout({action: ''}),
+      getLogStdout({ action: '' }),
       '::endgroup::',
       '::group::Command test',
       '[command]ls -lat',

@@ -1,14 +1,15 @@
 /* eslint-disable no-magic-numbers */
-import {resolve} from 'path';
-import nock from 'nock';
+import { resolve } from 'path';
 import {
   testEnv,
   getOctokit,
   disableNetConnect,
   generateContext,
-  getApiFixture
+  getApiFixture,
 } from '@technote-space/github-action-test-helper';
-import {getIssues} from '../../src/utils/issue';
+import nock from 'nock';
+import { describe, expect, it } from 'vitest';
+import { getIssues } from './issue';
 
 const rootDir     = resolve(__dirname, '../..');
 const fixturesDir = resolve(__dirname, '..', 'fixtures');
@@ -22,10 +23,10 @@ describe('getIssues', () => {
       .get('/repos/hello/world/issues')
       .reply(200, () => getApiFixture(fixturesDir, 'issues.get'));
 
-    const issues = await getIssues(getOctokit(), generateContext({owner: 'hello', repo: 'world'}));
+    const issues = await getIssues(getOctokit(), generateContext({ owner: 'hello', repo: 'world' }));
 
     expect(issues).toHaveLength(2);
-    expect(issues[0].id).toBe(1);
-    expect(issues[1].id).toBe(3);
+    expect(issues[0]!.id).toBe(1);
+    expect(issues[1]!.id).toBe(3);
   });
 });
